@@ -1,0 +1,96 @@
+/* ===== Design tokens ===== */
+:root {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --accent-2: #a78bfa;
+  --radius: 12px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.container { width: min(1000px, 92%); margin: 0 auto; }
+
+/* ===== Navigation ===== */
+header {
+  background: rgba(15, 23, 42, 0.95);
+  position: sticky; top: 0; z-index: 10;
+  border-bottom: 1px solid var(--surface);
+}
+nav .container {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 0;
+}
+.logo { font-weight: 700; font-size: 1.2rem; color: var(--accent); }
+nav ul { list-style: none; display: flex; gap: 22px; }
+nav ul a { color: var(--text); padding-bottom: 4px; }
+nav ul a.active, nav ul a:hover { color: var(--accent); border-bottom: 2px solid var(--accent); text-decoration: none; }
+.menu-btn { display: none; background: none; border: 1px solid var(--muted); color: var(--text); padding: 6px 10px; border-radius: 8px; cursor: pointer; }
+
+/* ===== Sections ===== */
+main { padding: 40px 0 60px; }
+h1 { font-size: 2.4rem; line-height: 1.2; margin-bottom: 10px; }
+h2 { font-size: 1.6rem; margin: 36px 0 14px; color: var(--accent); }
+h3 { font-size: 1.15rem; margin-bottom: 6px; }
+p { margin-bottom: 12px; }
+.muted { color: var(--muted); }
+ul.list, ol.list { margin: 0 0 12px 22px; }
+
+.hero { display: flex; align-items: center; gap: 40px; padding: 30px 0; flex-wrap: wrap; }
+.hero img { width: 200px; height: 200px; border-radius: 50%; border: 4px solid var(--accent); background: var(--surface); }
+.hero-text { flex: 1; min-width: 260px; }
+.hero-text .tag { color: var(--accent-2); font-weight: 600; }
+
+.btn {
+  display: inline-block; background: var(--accent); color: #0f172a;
+  padding: 10px 22px; border-radius: 8px; font-weight: 600; border: none; cursor: pointer; font-size: 1rem;
+}
+.btn:hover { background: var(--accent-2); text-decoration: none; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.card { background: var(--surface); padding: 20px; border-radius: var(--radius); border: 1px solid #334155; }
+.card:hover { border-color: var(--accent); }
+
+/* ===== Table ===== */
+table { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: var(--radius); overflow: hidden; }
+th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid #334155; }
+th { background: #334155; color: var(--accent); }
+tr:last-child td { border-bottom: none; }
+.table-wrap { overflow-x: auto; }
+
+/* ===== Form ===== */
+form { background: var(--surface); padding: 24px; border-radius: var(--radius); max-width: 620px; }
+.field { margin-bottom: 16px; }
+label, legend { display: block; margin-bottom: 6px; font-weight: 600; }
+input[type="text"], input[type="email"], select, textarea {
+  width: 100%; padding: 10px 12px; border-radius: 8px;
+  border: 1px solid #475569; background: var(--bg); color: var(--text); font: inherit;
+}
+input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); }
+fieldset { border: none; }
+.inline label { display: inline-block; font-weight: 400; margin-right: 16px; }
+.error { color: #f87171; font-size: 0.9rem; min-height: 1.2em; }
+.success { background: #14532d; color: #bbf7d0; padding: 12px; border-radius: 8px; margin-top: 14px; }
+.hidden { display: none; }
+
+footer { border-top: 1px solid var(--surface); padding: 22px 0; text-align: center; color: var(--muted); }
+
+/* ===== Responsive ===== */
+@media (max-width: 680px) {
+  .menu-btn { display: block; }
+  nav ul { display: none; flex-direction: column; gap: 10px; position: absolute; top: 58px; right: 4%; background: var(--surface); padding: 16px 24px; border-radius: var(--radius); }
+  nav ul.open { display: flex; }
+  h1 { font-size: 1.9rem; }
+}

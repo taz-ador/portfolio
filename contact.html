@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Moh. Tazuddin Bhuiyan.">
+  <title>Contact | Moh. Tazuddin Bhuiyan Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="container">
+        <a href="index.html" class="logo">Moh. Tazuddin Bhuiyan</a>
+        <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">&#9776; Menu</button>
+        <ul id="navList">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Contact Me</h1>
+    <p class="muted">Email: <a href="mailto:tazuddin22333@gmail.com">tazuddin22333@gmail.com</a> &middot;
+      <a href="https://github.com/taz-ador" target="_blank" rel="noopener">GitHub</a></p>
+
+    <form id="contactForm" novalidate>
+      <div class="field">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name">
+        <div class="error" id="nameError"></div>
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com">
+        <div class="error" id="emailError"></div>
+      </div>
+
+      <fieldset class="field inline">
+        <legend>I am a</legend>
+        <label><input type="radio" name="role" value="student" checked> Student</label>
+        <label><input type="radio" name="role" value="teacher"> Teacher</label>
+        <label><input type="radio" name="role" value="recruiter"> Recruiter</label>
+      </fieldset>
+
+      <fieldset class="field inline">
+        <legend>I want to talk about (optional)</legend>
+        <label><input type="checkbox" name="topic" value="project"> Project</label>
+        <label><input type="checkbox" name="topic" value="internship"> Internship</label>
+        <label><input type="checkbox" name="topic" value="feedback"> Feedback</label>
+      </fieldset>
+
+      <div class="field">
+        <label for="subject">Subject</label>
+        <select id="subject" name="subject">
+          <option value="">-- Select a subject --</option>
+          <option value="general">General question</option>
+          <option value="collab">Collaboration</option>
+          <option value="job">Job / Internship</option>
+          <option value="other">Other</option>
+        </select>
+        <div class="error" id="subjectError"></div>
+      </div>
+
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Write your message here..."></textarea>
+        <div class="error" id="messageError"></div>
+      </div>
+
+      <button type="submit" class="btn">Send Message</button>
+      <div class="success hidden" id="successMsg">Thank you! Your message has been recorded.</div>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Moh. Tazuddin Bhuiyan. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
